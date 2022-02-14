@@ -1,0 +1,1 @@
+score=Score(df,df_features,delta=0.05,normalizar_score=True,save_excel=True,rotacao='oblimin',verbose=True)
