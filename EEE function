@@ -2,13 +2,11 @@ import pandas as pd
 from utils.gerar_score import Score
 import os
 
-df_features = pd.read_excel("C:\\Users\\DELL\\Google Drive\\2021-2\\TCC\\Dataset\\DADOS_SCORE_21_09_refatoracao.xlsx",sheet_name="Planilha2")
+df_features_eee = pd.read_excel("C:\\Users\\DELL\\Google Drive\\2021-2\\TCC\\Dataset\\DADOS_SCORE_21_09_refatoracao.xlsx",sheet_name="Planilha2")
 df = pd.read_excel("C:\\Users\\DELL\\Google Drive\\2021-2\\TCC\\Dataset\\dados tratados missing 5.xlsx")
 
 
 if os.path.exists("Scores.xlsx") == True:
     os.remove("Scores.xlsx")
  
- score=Score(df,df_features,delta=0.05,normalizar_score=True,save_excel=True,rotacao='oblimin',verbose=True)
- 
- ### Visualização de Resulados
+ score=Score(df,df_features_eee,delta=0.05,normalizar_score=True,save_excel=True,rotacao='oblimin',verbose=True)
