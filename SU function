@@ -1,1 +1,12 @@
-score=Score(df,df_features,delta=0.05,normalizar_score=True,save_excel=True,rotacao='oblimin',verbose=True)
+import pandas as pd
+from utils.gerar_score import Score
+import os
+
+df_features_su = pd.read_excel("C:\\Users\\DELL\\Google Drive\\2021-2\\TCC\\Dataset\\DADOS_SCORE_21_09_Pablo.xlsx",sheet_name="Planilha2")
+df = pd.read_excel("C:\\Users\\DELL\\Google Drive\\2021-2\\TCC\\Dataset\\dados tratados missing 5.xlsx")
+
+
+if os.path.exists("Scores.xlsx") == True:
+    os.remove("Scores.xlsx")
+ 
+ score=Score(df,df_features_su,delta=0.05,normalizar_score=True,save_excel=True,rotacao='oblimin',verbose=True)
